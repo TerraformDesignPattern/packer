@@ -1,4 +1,4 @@
-#!/bin/bash  -x
+#!/bin/bash  -ex
 # This script uses Packer to build new AMIs. 
 # It will also update the Terraform's variables.tf with the new AMI ID.
 
