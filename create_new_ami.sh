@@ -2,7 +2,7 @@
 # This script uses Packer to build new AMIs. 
 # It will also update the Terraform's variables.tf with the new AMI ID.
 
-BUILD_NUMBER="2"
+BUILD_NUMBER="3"
 LOG_FILE="packer-output.log"
 REGIONS="us-east-1"
 
