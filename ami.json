@@ -1,0 +1,31 @@
+{
+  "variables": {
+    "AWS_ACCESS_KEY": "{{env `AWS_ACCESS_KEY_ID`}}",
+    "AWS_SECRET_KEY": "{{env `AWS_SECRET_ACCESS_KEY`}}",
+    "BUILD_NUMBER": "{{env `BUILD_NUMBER`}}",
+    "REGIONS": "{{env `REGIONS`}}"
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "access_key": "{{user `AWS_ACCESS_KEY`}}",
+      "secret_key": "{{user `AWS_SECRET_KEY`}}",
+      "region": "{{user `REGIONS`}}",
+      "ami_name": "docker_ami_{{ user `BUILD_NUMBER`}}",
+      "ami_groups": ["all"],
+      "source_ami": "ami-45b69e52",
+      "instance_type": "t2.small",
+      "ssh_username": "ubuntu",
+      "ssh_pty": "true",
+      "subnet_id": "subnet-ada31f80",
+      "vpc_id": "vpc-b56999d3"
+    }
+  ],
+  "provisioners": [
+    {
+      "execute_command": "{{ .Vars }} sudo -E '{{ .Path }}'",
+      "script": "build_ami.sh",
+      "type": "shell"
+    }
+  ]
+}

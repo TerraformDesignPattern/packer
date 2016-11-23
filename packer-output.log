@@ -1,0 +1,230 @@
+[1;32mamazon-ebs output will be in this color.[0m
+
+[1;32m==> amazon-ebs: Prevalidating AMI Name...[0m
+[1;32m==> amazon-ebs: Inspecting the source AMI...[0m
+[1;32m==> amazon-ebs: Creating temporary keypair: packer 58345a51-266e-ce57-7f06-a720eeeb5f48[0m
+[1;32m==> amazon-ebs: Creating temporary security group for this instance...[0m
+[1;32m==> amazon-ebs: Authorizing access to port 22 the temporary security group...[0m
+[1;32m==> amazon-ebs: Launching a source AWS instance...[0m
+[0;32m    amazon-ebs: Instance ID: i-013805dad860bad45[0m
+[1;32m==> amazon-ebs: Waiting for instance (i-013805dad860bad45) to become ready...[0m
+[1;32m==> amazon-ebs: Waiting for SSH to become available...[0m
+[1;32m==> amazon-ebs: Connected to SSH![0m
+[1;32m==> amazon-ebs: Provisioning with shell script: build_ami.sh[0m
+[0;32m    amazon-ebs: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial InRelease[0m
+[0;32m    amazon-ebs: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease [95.7 kB][0m
+[0;32m    amazon-ebs: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-backports InRelease [92.2 kB][0m
+[0;32m    amazon-ebs: Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main Sources [868 kB][0m
+[0;32m    amazon-ebs: Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/restricted Sources [4,808 B][0m
+[0;32m    amazon-ebs: Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/universe Sources [7,728 kB][0m
+[0;32m    amazon-ebs: Get:7 http://security.ubuntu.com/ubuntu xenial-security InRelease [94.5 kB][0m
+[0;32m    amazon-ebs: Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/multiverse Sources [179 kB][0m
+[0;32m    amazon-ebs: Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main Sources [206 kB][0m
+[0;32m    amazon-ebs: Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/restricted Sources [1,804 B][0m
+[0;32m    amazon-ebs: Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/universe Sources [109 kB][0m
+[0;32m    amazon-ebs: Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/multiverse Sources [3,648 B][0m
+[0;32m    amazon-ebs: Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [426 kB][0m
+[0;32m    amazon-ebs: Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main Translation-en [164 kB][0m
+[0;32m    amazon-ebs: Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [362 kB][0m
+[0;32m    amazon-ebs: Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/universe Translation-en [131 kB][0m
+[0;32m    amazon-ebs: Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [7,384 B][0m
+[0;32m    amazon-ebs: Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/multiverse Translation-en [2,988 B][0m
+[0;32m    amazon-ebs: Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-backports/main Sources [3,172 B][0m
+[0;32m    amazon-ebs: Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-backports/universe Sources [1,868 B][0m
+[0;32m    amazon-ebs: Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [4,396 B][0m
+[0;32m    amazon-ebs: Get:22 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-backports/main Translation-en [3,104 B][0m
+[0;32m    amazon-ebs: Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [2,412 B][0m
+[0;32m    amazon-ebs: Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-backports/universe Translation-en [1,216 B][0m
+[0;32m    amazon-ebs: Get:25 http://security.ubuntu.com/ubuntu xenial-security/main Sources [45.9 kB][0m
+[0;32m    amazon-ebs: Get:26 http://security.ubuntu.com/ubuntu xenial-security/restricted Sources [1,804 B][0m
+[0;32m    amazon-ebs: Get:27 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [13.8 kB][0m
+[0;32m    amazon-ebs: Get:28 http://security.ubuntu.com/ubuntu xenial-security/multiverse Sources [728 B][0m
+[0;32m    amazon-ebs: Get:29 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [163 kB][0m
+[0;32m    amazon-ebs: Get:30 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en [68.0 kB][0m
+[0;32m    amazon-ebs: Get:31 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [59.4 kB][0m
+[0;32m    amazon-ebs: Get:32 http://security.ubuntu.com/ubuntu xenial-security/universe Translation-en [33.5 kB][0m
+[0;32m    amazon-ebs: Fetched 10.9 MB in 2s (4,864 kB/s)[0m
+[0;32m    amazon-ebs: Reading package lists... Done[0m
+[0;32m    amazon-ebs: Reading package lists... Done[0m
+[0;32m    amazon-ebs: Building dependency tree[0m
+[0;32m    amazon-ebs: Reading state information... Done[0m
+[0;32m    amazon-ebs: ca-certificates is already the newest version (20160104ubuntu1).[0m
+[0;32m    amazon-ebs: git is already the newest version (1:2.7.4-0ubuntu1).[0m
+[0;32m    amazon-ebs: apt-transport-https is already the newest version (1.2.15).[0m
+[0;32m    amazon-ebs: Suggested packages:[0m
+[0;32m    amazon-ebs: zip[0m
+[0;32m    amazon-ebs: The following NEW packages will be installed:[0m
+[0;32m    amazon-ebs: unzip[0m
+[0;32m    amazon-ebs: 0 upgraded, 1 newly installed, 0 to remove and 8 not upgraded.[0m
+[0;32m    amazon-ebs: Need to get 158 kB of archives.[0m
+[0;32m    amazon-ebs: After this operation, 530 kB of additional disk space will be used.[0m
+[0;32m    amazon-ebs: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 unzip amd64 6.0-20ubuntu1 [158 kB][0m
+[0;32m    amazon-ebs: Fetched 158 kB in 0s (10.6 MB/s)[0m
+[0;32m    amazon-ebs: Selecting previously unselected package unzip.[0m
+[0;32m    amazon-ebs: (Reading database ... 53675 files and directories currently installed.)[0m
+[0;32m    amazon-ebs: Preparing to unpack .../unzip_6.0-20ubuntu1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking unzip (6.0-20ubuntu1) ...[0m
+[0;32m    amazon-ebs: Processing triggers for mime-support (3.59ubuntu1) ...[0m
+[0;32m    amazon-ebs: Processing triggers for man-db (2.7.5-1) ...[0m
+[0;32m    amazon-ebs: Setting up unzip (6.0-20ubuntu1) ...[0m
+[0;32m    amazon-ebs: Executing: /tmp/tmp.k9ewq9ii7r/gpg.1.sh --keyserver[0m
+[0;32m    amazon-ebs: hkp://ha.pool.sks-keyservers.net:80[0m
+[0;32m    amazon-ebs: --recv-keys[0m
+[0;32m    amazon-ebs: 58118E89F3A912897C070ADBF76221572C52609D[0m
+[0;32m    amazon-ebs: gpg: requesting key 2C52609D from hkp server ha.pool.sks-keyservers.net[0m
+[0;32m    amazon-ebs: gpg: key 2C52609D: public key "Docker Release Tool (releasedocker) <docker@docker.com>" imported[0m
+[0;32m    amazon-ebs: gpg: Total number processed: 1[0m
+[0;32m    amazon-ebs: gpg:               imported: 1  (RSA: 1)[0m
+[0;32m    amazon-ebs: deb https://apt.dockerproject.org/repo ubuntu-xenial main[0m
+[0;32m    amazon-ebs: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial InRelease[0m
+[0;32m    amazon-ebs: Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease[0m
+[0;32m    amazon-ebs: Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-backports InRelease[0m
+[0;32m    amazon-ebs: Hit:4 http://security.ubuntu.com/ubuntu xenial-security InRelease[0m
+[0;32m    amazon-ebs: Get:5 https://apt.dockerproject.org/repo ubuntu-xenial InRelease [30.2 kB][0m
+[0;32m    amazon-ebs: Get:6 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages [2,553 B][0m
+[0;32m    amazon-ebs: Fetched 32.8 kB in 0s (77.2 kB/s)[0m
+[0;32m    amazon-ebs: Reading package lists... Done[0m
+[0;32m    amazon-ebs: Reading package lists... Done[0m
+[0;32m    amazon-ebs: Building dependency tree[0m
+[0;32m    amazon-ebs: Reading state information... Done[0m
+[0;32m    amazon-ebs: The following additional packages will be installed:[0m
+[0;32m    amazon-ebs: crda iw libnl-3-200 libnl-genl-3-200 linux-firmware linux-image-generic[0m
+[0;32m    amazon-ebs: thermald wireless-regdb[0m
+[0;32m    amazon-ebs: The following NEW packages will be installed:[0m
+[0;32m    amazon-ebs: crda iw libnl-3-200 libnl-genl-3-200 linux-firmware[0m
+[0;32m    amazon-ebs: linux-image-extra-4.4.0-47-generic linux-image-extra-virtual[0m
+[0;32m    amazon-ebs: linux-image-generic thermald wireless-regdb[0m
+[0;32m    amazon-ebs: 0 upgraded, 10 newly installed, 0 to remove and 8 not upgraded.[0m
+[0;32m    amazon-ebs: Need to get 76.8 MB of archives.[0m
+[0;32m    amazon-ebs: After this operation, 322 MB of additional disk space will be used.[0m
+[0;32m    amazon-ebs: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libnl-3-200 amd64 3.2.27-1 [52.1 kB][0m
+[0;32m    amazon-ebs: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libnl-genl-3-200 amd64 3.2.27-1 [11.2 kB][0m
+[0;32m    amazon-ebs: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 wireless-regdb all 2015.07.20-1ubuntu1 [9,058 B][0m
+[0;32m    amazon-ebs: Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 iw amd64 3.17-1 [63.5 kB][0m
+[0;32m    amazon-ebs: Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 crda amd64 3.13-1 [60.5 kB][0m
+[0;32m    amazon-ebs: Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 linux-firmware all 1.157.5 [37.5 MB][0m
+[0;32m    amazon-ebs: Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 linux-image-extra-4.4.0-47-generic amd64 4.4.0-47.68 [38.9 MB][0m
+[0;32m    amazon-ebs: Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 linux-image-generic amd64 4.4.0.47.50 [2,312 B][0m
+[0;32m    amazon-ebs: Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 linux-image-extra-virtual amd64 4.4.0.47.50 [1,766 B][0m
+[0;32m    amazon-ebs: Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 thermald amd64 1.5-2ubuntu2 [187 kB][0m
+[0;32m    amazon-ebs: Fetched 76.8 MB in 2s (28.4 MB/s)[0m
+[0;32m    amazon-ebs: Selecting previously unselected package libnl-3-200:amd64.[0m
+[0;32m    amazon-ebs: (Reading database ... 53693 files and directories currently installed.)[0m
+[0;32m    amazon-ebs: Preparing to unpack .../libnl-3-200_3.2.27-1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking libnl-3-200:amd64 (3.2.27-1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package libnl-genl-3-200:amd64.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../libnl-genl-3-200_3.2.27-1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking libnl-genl-3-200:amd64 (3.2.27-1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package wireless-regdb.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../wireless-regdb_2015.07.20-1ubuntu1_all.deb ...[0m
+[0;32m    amazon-ebs: Unpacking wireless-regdb (2015.07.20-1ubuntu1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package iw.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../archives/iw_3.17-1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking iw (3.17-1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package crda.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../archives/crda_3.13-1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking crda (3.13-1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package linux-firmware.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../linux-firmware_1.157.5_all.deb ...[0m
+[0;32m    amazon-ebs: Unpacking linux-firmware (1.157.5) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package linux-image-extra-4.4.0-47-generic.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../linux-image-extra-4.4.0-47-generic_4.4.0-47.68_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking linux-image-extra-4.4.0-47-generic (4.4.0-47.68) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package linux-image-generic.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../linux-image-generic_4.4.0.47.50_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking linux-image-generic (4.4.0.47.50) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package linux-image-extra-virtual.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../linux-image-extra-virtual_4.4.0.47.50_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking linux-image-extra-virtual (4.4.0.47.50) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package thermald.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../thermald_1.5-2ubuntu2_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking thermald (1.5-2ubuntu2) ...[0m
+[0;32m    amazon-ebs: Processing triggers for libc-bin (2.23-0ubuntu4) ...[0m
+[0;32m    amazon-ebs: Processing triggers for man-db (2.7.5-1) ...[0m
+[0;32m    amazon-ebs: Processing triggers for systemd (229-4ubuntu12) ...[0m
+[0;32m    amazon-ebs: Processing triggers for ureadahead (0.100.0-19) ...[0m
+[0;32m    amazon-ebs: Processing triggers for dbus (1.10.6-1ubuntu3.1) ...[0m
+[0;32m    amazon-ebs: Setting up libnl-3-200:amd64 (3.2.27-1) ...[0m
+[0;32m    amazon-ebs: Setting up libnl-genl-3-200:amd64 (3.2.27-1) ...[0m
+[0;32m    amazon-ebs: Setting up wireless-regdb (2015.07.20-1ubuntu1) ...[0m
+[0;32m    amazon-ebs: Setting up iw (3.17-1) ...[0m
+[0;32m    amazon-ebs: Setting up crda (3.13-1) ...[0m
+[0;32m    amazon-ebs: Setting up linux-firmware (1.157.5) ...[0m
+[0;32m    amazon-ebs: Setting up linux-image-extra-4.4.0-47-generic (4.4.0-47.68) ...[0m
+[0;32m    amazon-ebs: run-parts: executing /etc/kernel/postinst.d/apt-auto-removal 4.4.0-47-generic /boot/vmlinuz-4.4.0-47-generic[0m
+[0;32m    amazon-ebs: run-parts: executing /etc/kernel/postinst.d/initramfs-tools 4.4.0-47-generic /boot/vmlinuz-4.4.0-47-generic[0m
+[0;32m    amazon-ebs: update-initramfs: Generating /boot/initrd.img-4.4.0-47-generic[0m
+[0;32m    amazon-ebs: W: mdadm: /etc/mdadm/mdadm.conf defines no arrays.[0m
+[0;32m    amazon-ebs: run-parts: executing /etc/kernel/postinst.d/unattended-upgrades 4.4.0-47-generic /boot/vmlinuz-4.4.0-47-generic[0m
+[0;32m    amazon-ebs: run-parts: executing /etc/kernel/postinst.d/update-notifier 4.4.0-47-generic /boot/vmlinuz-4.4.0-47-generic[0m
+[0;32m    amazon-ebs: run-parts: executing /etc/kernel/postinst.d/zz-update-grub 4.4.0-47-generic /boot/vmlinuz-4.4.0-47-generic[0m
+[0;32m    amazon-ebs: Generating grub configuration file ...[0m
+[0;32m    amazon-ebs: Found linux image: /boot/vmlinuz-4.4.0-47-generic[0m
+[0;32m    amazon-ebs: Found initrd image: /boot/initrd.img-4.4.0-47-generic[0m
+[0;32m    amazon-ebs: done[0m
+[0;32m    amazon-ebs: Setting up linux-image-generic (4.4.0.47.50) ...[0m
+[0;32m    amazon-ebs: Setting up linux-image-extra-virtual (4.4.0.47.50) ...[0m
+[0;32m    amazon-ebs: Setting up thermald (1.5-2ubuntu2) ...[0m
+[0;32m    amazon-ebs: Processing triggers for libc-bin (2.23-0ubuntu4) ...[0m
+[0;32m    amazon-ebs: Processing triggers for dbus (1.10.6-1ubuntu3.1) ...[0m
+[0;32m    amazon-ebs: Processing triggers for systemd (229-4ubuntu12) ...[0m
+[0;32m    amazon-ebs: Processing triggers for ureadahead (0.100.0-19) ...[0m
+[0;32m    amazon-ebs: Reading package lists... Done[0m
+[0;32m    amazon-ebs: Building dependency tree[0m
+[0;32m    amazon-ebs: Reading state information... Done[0m
+[0;32m    amazon-ebs: The following additional packages will be installed:[0m
+[0;32m    amazon-ebs: aufs-tools cgroupfs-mount libltdl7[0m
+[0;32m    amazon-ebs: Suggested packages:[0m
+[0;32m    amazon-ebs: mountall[0m
+[0;32m    amazon-ebs: The following NEW packages will be installed:[0m
+[0;32m    amazon-ebs: aufs-tools cgroupfs-mount docker-engine libltdl7[0m
+[0;32m    amazon-ebs: 0 upgraded, 4 newly installed, 0 to remove and 8 not upgraded.[0m
+[0;32m    amazon-ebs: Need to get 19.5 MB of archives.[0m
+[0;32m    amazon-ebs: After this operation, 102 MB of additional disk space will be used.[0m
+[0;32m    amazon-ebs: Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/universe amd64 aufs-tools amd64 1:3.2+20130722-1.1ubuntu1 [92.9 kB][0m
+[0;32m    amazon-ebs: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/universe amd64 cgroupfs-mount all 1.2 [4,970 B][0m
+[0;32m    amazon-ebs: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libltdl7 amd64 2.4.6-0.1 [38.3 kB][0m
+[0;32m    amazon-ebs: Get:4 https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 docker-engine amd64 1.12.3-0~xenial [19.3 MB][0m
+[0;32m    amazon-ebs: Fetched 19.5 MB in 0s (21.2 MB/s)[0m
+[0;32m    amazon-ebs: Selecting previously unselected package aufs-tools.[0m
+[0;32m    amazon-ebs: (Reading database ... 59691 files and directories currently installed.)[0m
+[0;32m    amazon-ebs: Preparing to unpack .../aufs-tools_1%3a3.2+20130722-1.1ubuntu1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking aufs-tools (1:3.2+20130722-1.1ubuntu1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package cgroupfs-mount.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../cgroupfs-mount_1.2_all.deb ...[0m
+[0;32m    amazon-ebs: Unpacking cgroupfs-mount (1.2) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package libltdl7:amd64.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../libltdl7_2.4.6-0.1_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking libltdl7:amd64 (2.4.6-0.1) ...[0m
+[0;32m    amazon-ebs: Selecting previously unselected package docker-engine.[0m
+[0;32m    amazon-ebs: Preparing to unpack .../docker-engine_1.12.3-0~xenial_amd64.deb ...[0m
+[0;32m    amazon-ebs: Unpacking docker-engine (1.12.3-0~xenial) ...[0m
+[0;32m    amazon-ebs: Processing triggers for libc-bin (2.23-0ubuntu4) ...[0m
+[0;32m    amazon-ebs: Processing triggers for man-db (2.7.5-1) ...[0m
+[0;32m    amazon-ebs: Processing triggers for ureadahead (0.100.0-19) ...[0m
+[0;32m    amazon-ebs: Processing triggers for systemd (229-4ubuntu12) ...[0m
+[0;32m    amazon-ebs: Setting up aufs-tools (1:3.2+20130722-1.1ubuntu1) ...[0m
+[0;32m    amazon-ebs: Setting up cgroupfs-mount (1.2) ...[0m
+[0;32m    amazon-ebs: Setting up libltdl7:amd64 (2.4.6-0.1) ...[0m
+[0;32m    amazon-ebs: Setting up docker-engine (1.12.3-0~xenial) ...[0m
+[0;32m    amazon-ebs: Processing triggers for libc-bin (2.23-0ubuntu4) ...[0m
+[0;32m    amazon-ebs: Processing triggers for systemd (229-4ubuntu12) ...[0m
+[0;32m    amazon-ebs: Processing triggers for ureadahead (0.100.0-19) ...[0m
+[1;32m==> amazon-ebs: Stopping the source instance...[0m
+[1;32m==> amazon-ebs: Waiting for the instance to stop...[0m
+[1;32m==> amazon-ebs: Creating the AMI: docker_ami_2[0m
+[0;32m    amazon-ebs: AMI: ami-ca0d3cdd[0m
+[1;32m==> amazon-ebs: Waiting for AMI to become ready...[0m
+[1;32m==> amazon-ebs: Modifying attributes on AMI (ami-ca0d3cdd)...[0m
+[0;32m    amazon-ebs: Modifying: groups[0m
+[1;32m==> amazon-ebs: Terminating the source AWS instance...[0m
+[1;32m==> amazon-ebs: Cleaning up any extra volumes...[0m
+[1;32m==> amazon-ebs: No volumes to clean up, skipping[0m
+[1;32m==> amazon-ebs: Deleting temporary security group...[0m
+[1;32m==> amazon-ebs: Deleting temporary keypair...[0m
+[1;32mBuild 'amazon-ebs' finished.[0m
+
+==> Builds finished. The artifacts of successful builds are:
+--> amazon-ebs: AMIs were created:
+
+us-east-1: ami-ca0d3cdd
